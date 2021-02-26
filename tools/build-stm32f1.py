@@ -65,10 +65,8 @@ def get_vector_tab_addr(board, upload_protocol):
     # Some special cases
     boards_8005000 = (
         "maple",
-        "maple_ret6",
         "maple_pro",
-        "microduino32_flash",
-        "maple_mini_origin"
+        "maple_mini"
     )
 
     if any(b == board for b in boards_8005000):
@@ -118,8 +116,7 @@ def get_linker_script(board, mcu, upload_protocol):
         boards_with_boot_20 = (
             "genericSTM32F103C",
             "genericSTM32F103T",
-            "maple_mini_b20",
-            "STM32F103TB"
+            "maple_mini"
         )
 
         if any(b in board for b in boards_with_boot_20):
@@ -161,8 +158,7 @@ def get_linker_script(board, mcu, upload_protocol):
             "nucleo_f103rb",
             "genericSTM32F103CB",
             "genericSTM32F103TB",
-            "disco_f100rb",
-            "STM32F103TB"
+            "disco_f100rb"
         )
 
         if any(b in board for b in specific_scripts):
