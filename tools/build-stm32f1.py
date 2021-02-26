@@ -34,8 +34,9 @@ assert isdir(FRAMEWORK_DIR)
 VARIANT_REMAP = {
     "bluepill_f103c8": "generic_stm32f103c",
     "bluepill_f103c6": "generic_stm32f103c",
-    "bluepill_f103c8_128k": "generic_stm32f103c",
+    "bluepill_f103cb": "generic_stm32f103c",
     "maple": "maple",
+    "maple_pro": "maple",
     "maple_mini_b20": "maple_mini",
     "maple_mini_origin": "maple_mini",
     "microduino32_flash": "microduino",
@@ -69,6 +70,7 @@ def get_vector_tab_addr(board, upload_protocol):
     boards_8005000 = (
         "maple",
         "maple_ret6",
+        "maple_pro",
         "microduino32_flash",
         "maple_mini_origin"
     )
