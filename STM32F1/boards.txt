@@ -195,73 +195,6 @@ maplePro.menu.opt.ogstd=Debug (-g)
 maplePro.menu.opt.ogstd.build.flags.optimize=-Og
 maplePro.menu.opt.ogstd.build.flags.ldspecs=
 
-##############################################################
-
-microduino32_flash.name=Microduino Core STM32 to Flash
-
-microduino32_flash.vid.0=0x1EAF
-microduino32_flash.pid.0=0x0004
-microduino32_flash.upload.tool=maple_upload
-microduino32_flash.upload.protocol=maple_dfu
-microduino32_flash.upload.maximum_size=108000
-microduino32_flash.upload.maximum_data_size=17000
-microduino32_flash.upload.use_1200bps_touch=false
-microduino32_flash.upload.file_type=bin
-microduino32_flash.upload.usbID=1EAF:0003
-microduino32_flash.upload.altID=1
-microduino32_flash.upload.auto_reset=true
-
-microduino32_flash.build.mcu=cortex-m3
-microduino32_flash.build.f_cpu=72000000L
-microduino32_flash.build.board=MICRODUINO_CORE_STM32
-microduino32_flash.build.core=maple
-microduino32_flash.build.extra_flags=-DMCU_STM32F103CB -mthumb -DSERIAL_USB -march=armv7-m -D__STM32F1__
-microduino32_flash.build.ldscript=ld/flash.ld
-microduino32_flash.build.variant=microduino
-microduino32_flash.build.variant_system_lib=libmaple.a
-microduino32_flash.build.vect=VECT_TAB_ADDR=0x8005000
-microduino32_flash.build.density=STM32_MEDIUM_DENSITY
-# FIXME!
-microduino32_flash.build.error_led_port=GPIOB
-microduino32_flash.build.error_led_pin=1
-microduino32_flash.build.gcc_ver=gcc-arm-none-eabi-4.8.3-2014q1
-
-#-- CPU Clock frequency
-microduino32_flash.menu.cpu_speed.speed_72mhz=72Mhz (Normal)
-microduino32_flash.menu.cpu_speed.speed_72mhz.build.f_cpu=72000000L
-
-microduino32_flash.menu.cpu_speed.speed_48mhz=48Mhz (Slow - with USB)
-microduino32_flash.menu.cpu_speed.speed_48mhz.build.f_cpu=48000000L
-
-microduino32_flash.menu.cpu_speed.speed_128mhz=Overclocked 128Mhz NO USB SERIAL. MANUAL RESET NEEDED TO UPLOAD
-microduino32_flash.menu.cpu_speed.speed_128mhz.build.f_cpu=128000000L
-
-#-- Optimizations
-microduino32_flash.menu.opt.osstd=Smallest (default)
-#microduino32_flash.menu.opt.oslto=Smallest Code with LTO
-#microduino32_flash.menu.opt.oslto.build.flags.optimize=-Os -flto
-#microduino32_flash.menu.opt.oslto.build.flags.ldspecs=-flto
-microduino32_flash.menu.opt.o1std=Fast (-O1)
-microduino32_flash.menu.opt.o1std.build.flags.optimize=-O1
-microduino32_flash.menu.opt.o1std.build.flags.ldspecs=
-#microduino32_flash.menu.opt.o1lto=Fast (-O1) with LTO
-#microduino32_flash.menu.opt.o1lto.build.flags.optimize=-O1 -flto
-#microduino32_flash.menu.opt.o1lto.build.flags.ldspecs=-flto
-microduino32_flash.menu.opt.o2std=Faster (-O2)
-microduino32_flash.menu.opt.o2std.build.flags.optimize=-O2
-microduino32_flash.menu.opt.o2std.build.flags.ldspecs=
-#microduino32_flash.menu.opt.o2lto=Faster (-O2) with LTO
-#microduino32_flash.menu.opt.o2lto.build.flags.optimize=-O2 -flto
-#microduino32_flash.menu.opt.o2lto.build.flags.ldspecs=-flto
-microduino32_flash.menu.opt.o3std=Fastest (-O3)
-microduino32_flash.menu.opt.o3std.build.flags.optimize=-O3
-microduino32_flash.menu.opt.o3std.build.flags.ldspecs=
-#microduino32_flash.menu.opt.o3lto=Fastest (-O3) with LTO
-#microduino32_flash.menu.opt.o3lto.build.flags.optimize=-O3 -flto
-#microduino32_flash.menu.opt.o3lto.build.flags.ldspecs=-flto
-microduino32_flash.menu.opt.ogstd=Debug (-g)
-microduino32_flash.menu.opt.ogstd.build.flags.optimize=-Og
-microduino32_flash.menu.opt.ogstd.build.flags.ldspecs=
 
 ##############################################################
 nucleo_f103rb.name=STM Nucleo F103RB (STLink)
@@ -934,157 +867,157 @@ genericSTM32F103Z.menu.opt.ogstd=Debug (-g)
 genericSTM32F103Z.menu.opt.ogstd.build.flags.optimize=-Og
 genericSTM32F103Z.menu.opt.ogstd.build.flags.ldspecs=
 
-###################### HYTiny STM32F103T ########################################
+###################### OSQ STM32F103T ########################################
 
-hytiny-stm32f103t.name=HYTiny STM32F103TB
-hytiny-stm32f103t.vid.0=0x1EAF
-hytiny-stm32f103t.pid.0=0x0004
-hytiny-stm32f103t.build.variant=hytiny_stm32f103t
-hytiny-stm32f103t.build.vect=VECT_TAB_ADDR=0x8000000
-hytiny-stm32f103t.build.core=maple
-hytiny-stm32f103t.build.board=HYTINY_STM32F103T
-hytiny-stm32f103t.upload.use_1200bps_touch=false
-hytiny-stm32f103t.upload.file_type=bin
-hytiny-stm32f103t.upload.auto_reset=true
-
-
-hytiny-stm32f103t.build.cpu_flags=-DMCU_STM32F103CB
-hytiny-stm32f103t.build.ldscript=ld/jtag.ld
-hytiny-stm32f103t.upload.maximum_size=131072
-hytiny-stm32f103t.upload.maximum_data_size=20480
-
-#---------------------------- UPLOAD METHODS ---------------------------
-
-hytiny-stm32f103t.menu.upload_method.DFUUploadMethod=STM32duino bootloader
-hytiny-stm32f103t.menu.upload_method.DFUUploadMethod.upload.protocol=maple_dfu
-hytiny-stm32f103t.menu.upload_method.DFUUploadMethod.upload.tool=maple_upload
-hytiny-stm32f103t.menu.upload_method.DFUUploadMethod.build.upload_flags=-DSERIAL_USB
-hytiny-stm32f103t.menu.upload_method.DFUUploadMethod.build.vect=VECT_TAB_ADDR=0x8002000
-hytiny-stm32f103t.menu.upload_method.DFUUploadMethod.build.ldscript=ld/bootloader_20.ld
-hytiny-stm32f103t.menu.upload_method.DFUUploadMethod.upload.usbID=1EAF:0003
-hytiny-stm32f103t.menu.upload_method.DFUUploadMethod.upload.altID=2
-
-hytiny-stm32f103t.menu.upload_method.serialMethod=Serial
-hytiny-stm32f103t.menu.upload_method.serialMethod.upload.protocol=maple_serial
-hytiny-stm32f103t.menu.upload_method.serialMethod.upload.tool=serial_upload
-hytiny-stm32f103t.menu.upload_method.serialMethod.build.upload_flags=-DCONFIG_MAPLE_MINI_NO_DISABLE_DEBUG=1
-
-hytiny-stm32f103t.menu.upload_method.STLinkMethod=STLink
-hytiny-stm32f103t.menu.upload_method.STLinkMethod.upload.protocol=STLink
-hytiny-stm32f103t.menu.upload_method.STLinkMethod.upload.tool=stlink_upload
-hytiny-stm32f103t.menu.upload_method.STLinkMethod.build.upload_flags=-DCONFIG_MAPLE_MINI_NO_DISABLE_DEBUG=1 -DSERIAL_USB -DGENERIC_BOOTLOADER
-
-hytiny-stm32f103t.menu.upload_method.BMPMethod=BMP (Black Magic Probe)
-hytiny-stm32f103t.menu.upload_method.BMPMethod.upload.protocol=gdb_bmp
-hytiny-stm32f103t.menu.upload_method.BMPMethod.upload.tool=bmp_upload
-hytiny-stm32f103t.menu.upload_method.BMPMethod.build.upload_flags=-DCONFIG_MAPLE_MINI_NO_DISABLE_DEBUG
+STM32F103TB.name=OSQ STM32F103TB
+STM32F103TB.vid.0=0x1EAF
+STM32F103TB.pid.0=0x0004
+STM32F103TB.build.variant=STM32F103TB
+STM32F103TB.build.vect=VECT_TAB_ADDR=0x8000000
+STM32F103TB.build.core=maple
+STM32F103TB.build.board=HYTINY_STM32F103T
+STM32F103TB.upload.use_1200bps_touch=false
+STM32F103TB.upload.file_type=bin
+STM32F103TB.upload.auto_reset=true
 
 
-hytiny-stm32f103t.menu.upload_method.jlinkMethod=JLink
-hytiny-stm32f103t.menu.upload_method.jlinkMethod.upload.protocol=jlink
-hytiny-stm32f103t.menu.upload_method.jlinkMethod.upload.tool=jlink_upload
-hytiny-stm32f103t.menu.upload_method.jlinkMethod.build.upload_flags=-DCONFIG_MAPLE_MINI_NO_DISABLE_DEBUG=1 -DSERIAL_USB -DGENERIC_BOOTLOADER
-
-#-- CPU Clock frequency
-hytiny-stm32f103t.menu.cpu_speed.speed_72mhz=72Mhz (Normal)
-hytiny-stm32f103t.menu.cpu_speed.speed_72mhz.build.f_cpu=72000000L
-
-hytiny-stm32f103t.menu.cpu_speed.speed_48mhz=48Mhz (Slow - with USB)
-hytiny-stm32f103t.menu.cpu_speed.speed_48mhz.build.f_cpu=48000000L
-
-hytiny-stm32f103t.menu.cpu_speed.speed_128mhz=Overclocked 128Mhz NO USB SERIAL. MANUAL RESET NEEDED TO UPLOAD
-hytiny-stm32f103t.menu.cpu_speed.speed_128mhz.build.f_cpu=128000000L
-
-#-- Optimizations
-hytiny-stm32f103t.menu.opt.osstd=Smallest (default)
-#hytiny-stm32f103t.menu.opt.oslto=Smallest Code with LTO
-#hytiny-stm32f103t.menu.opt.oslto.build.flags.optimize=-Os -flto
-#hytiny-stm32f103t.menu.opt.oslto.build.flags.ldspecs=-flto
-hytiny-stm32f103t.menu.opt.o1std=Fast (-O1)
-hytiny-stm32f103t.menu.opt.o1std.build.flags.optimize=-O1
-hytiny-stm32f103t.menu.opt.o1std.build.flags.ldspecs=
-#hytiny-stm32f103t.menu.opt.o1lto=Fast (-O1) with LTO
-#hytiny-stm32f103t.menu.opt.o1lto.build.flags.optimize=-O1 -flto
-#hytiny-stm32f103t.menu.opt.o1lto.build.flags.ldspecs=-flto
-hytiny-stm32f103t.menu.opt.o2std=Faster (-O2)
-hytiny-stm32f103t.menu.opt.o2std.build.flags.optimize=-O2
-hytiny-stm32f103t.menu.opt.o2std.build.flags.ldspecs=
-#hytiny-stm32f103t.menu.opt.o2lto=Faster (-O2) with LTO
-#hytiny-stm32f103t.menu.opt.o2lto.build.flags.optimize=-O2 -flto
-#hytiny-stm32f103t.menu.opt.o2lto.build.flags.ldspecs=-flto
-hytiny-stm32f103t.menu.opt.o3std=Fastest (-O3)
-hytiny-stm32f103t.menu.opt.o3std.build.flags.optimize=-O3
-hytiny-stm32f103t.menu.opt.o3std.build.flags.ldspecs=
-#hytiny-stm32f103t.menu.opt.o3lto=Fastest (-O3) with LTO
-#hytiny-stm32f103t.menu.opt.o3lto.build.flags.optimize=-O3 -flto
-#hytiny-stm32f103t.menu.opt.o3lto.build.flags.ldspecs=-flto
-hytiny-stm32f103t.menu.opt.ogstd=Debug (-g)
-hytiny-stm32f103t.menu.opt.ogstd.build.flags.optimize=-Og
-hytiny-stm32f103t.menu.opt.ogstd.build.flags.ldspecs=
-
-########################### STM32VLD to FLASH ###########################
-
-STM32VLD.name=STM32VLD to FLASH
-#STM32VLD.vid.0=0x1EAF
-#STM32VLD.pid.0=0x0004
-
-STM32VLD.build.vect=VECT_TAB_ADDR=0x8000000
-STM32VLD.build.core=maple
-STM32VLD.build.board=STM32VLD
-STM32VLD.build.variant=STM32VLD
-STM32VLD.build.ldscript=ld/jtag.ld
-
-STM32VLD.build.family=cortex-m3
-STM32VLD.build.f_cpu=24000000L
-STM32VLD.upload.use_1200bps_touch=false
-STM32VLD.upload.file_type=bin
-STM32VLD.upload.auto_reset=true
-STM32VLD.upload.params.quiet=no
-
-STM32VLD.build.cpu_flags=-DMCU_STM32F100RB
+STM32F103TB.build.cpu_flags=-DMCU_STM32F103CB
+STM32F103TB.build.ldscript=ld/jtag.ld
+STM32F103TB.upload.maximum_size=131072
+STM32F103TB.upload.maximum_data_size=20480
 
 #---------------------------- UPLOAD METHODS ---------------------------
 
-STM32VLD.menu.upload_method.STLinkMethod=STLink
-STM32VLD.menu.upload_method.STLinkMethod.upload.protocol=STLink
-STM32VLD.menu.upload_method.STLinkMethod.upload.tool=stlink_upload
-STM32VLD.menu.upload_method.STLinkMethod.build.upload_flags=-DCONFIG_MAPLE_MINI_NO_DISABLE_DEBUG
+STM32F103TB.menu.upload_method.DFUUploadMethod=STM32duino bootloader
+STM32F103TB.menu.upload_method.DFUUploadMethod.upload.protocol=maple_dfu
+STM32F103TB.menu.upload_method.DFUUploadMethod.upload.tool=maple_upload
+STM32F103TB.menu.upload_method.DFUUploadMethod.build.upload_flags=-DSERIAL_USB
+STM32F103TB.menu.upload_method.DFUUploadMethod.build.vect=VECT_TAB_ADDR=0x8002000
+STM32F103TB.menu.upload_method.DFUUploadMethod.build.ldscript=ld/bootloader_20.ld
+STM32F103TB.menu.upload_method.DFUUploadMethod.upload.usbID=1EAF:0003
+STM32F103TB.menu.upload_method.DFUUploadMethod.upload.altID=2
+
+STM32F103TB.menu.upload_method.serialMethod=Serial
+STM32F103TB.menu.upload_method.serialMethod.upload.protocol=maple_serial
+STM32F103TB.menu.upload_method.serialMethod.upload.tool=serial_upload
+STM32F103TB.menu.upload_method.serialMethod.build.upload_flags=-DCONFIG_MAPLE_MINI_NO_DISABLE_DEBUG=1
+
+STM32F103TB.menu.upload_method.STLinkMethod=STLink
+STM32F103TB.menu.upload_method.STLinkMethod.upload.protocol=STLink
+STM32F103TB.menu.upload_method.STLinkMethod.upload.tool=stlink_upload
+STM32F103TB.menu.upload_method.STLinkMethod.build.upload_flags=-DCONFIG_MAPLE_MINI_NO_DISABLE_DEBUG=1 -DSERIAL_USB -DGENERIC_BOOTLOADER
+
+STM32F103TB.menu.upload_method.BMPMethod=BMP (Black Magic Probe)
+STM32F103TB.menu.upload_method.BMPMethod.upload.protocol=gdb_bmp
+STM32F103TB.menu.upload_method.BMPMethod.upload.tool=bmp_upload
+STM32F103TB.menu.upload_method.BMPMethod.build.upload_flags=-DCONFIG_MAPLE_MINI_NO_DISABLE_DEBUG
+
+
+STM32F103TB.menu.upload_method.jlinkMethod=JLink
+STM32F103TB.menu.upload_method.jlinkMethod.upload.protocol=jlink
+STM32F103TB.menu.upload_method.jlinkMethod.upload.tool=jlink_upload
+STM32F103TB.menu.upload_method.jlinkMethod.build.upload_flags=-DCONFIG_MAPLE_MINI_NO_DISABLE_DEBUG=1 -DSERIAL_USB -DGENERIC_BOOTLOADER
 
 #-- CPU Clock frequency
-STM32VLD.menu.cpu_speed.speed_72mhz=72Mhz (Normal)
-STM32VLD.menu.cpu_speed.speed_72mhz.build.f_cpu=72000000L
+STM32F103TB.menu.cpu_speed.speed_72mhz=72Mhz (Normal)
+STM32F103TB.menu.cpu_speed.speed_72mhz.build.f_cpu=72000000L
 
-STM32VLD.menu.cpu_speed.speed_48mhz=48Mhz (Slow - with USB)
-STM32VLD.menu.cpu_speed.speed_48mhz.build.f_cpu=48000000L
+STM32F103TB.menu.cpu_speed.speed_48mhz=48Mhz (Slow - with USB)
+STM32F103TB.menu.cpu_speed.speed_48mhz.build.f_cpu=48000000L
 
-STM32VLD.menu.cpu_speed.speed_128mhz=Overclocked 128Mhz NO USB SERIAL. MANUAL RESET NEEDED TO UPLOAD
-STM32VLD.menu.cpu_speed.speed_128mhz.build.f_cpu=128000000L
+STM32F103TB.menu.cpu_speed.speed_128mhz=Overclocked 128Mhz NO USB SERIAL. MANUAL RESET NEEDED TO UPLOAD
+STM32F103TB.menu.cpu_speed.speed_128mhz.build.f_cpu=128000000L
 
 #-- Optimizations
-STM32VLD.menu.opt.osstd=Smallest (default)
-#STM32VLD.menu.opt.oslto=Smallest Code with LTO
-#STM32VLD.menu.opt.oslto.build.flags.optimize=-Os -flto
-#STM32VLD.menu.opt.oslto.build.flags.ldspecs=-flto
-STM32VLD.menu.opt.o1std=Fast (-O1)
-STM32VLD.menu.opt.o1std.build.flags.optimize=-O1
-STM32VLD.menu.opt.o1std.build.flags.ldspecs=
-#STM32VLD.menu.opt.o1lto=Fast (-O1) with LTO
-#STM32VLD.menu.opt.o1lto.build.flags.optimize=-O1 -flto
-#STM32VLD.menu.opt.o1lto.build.flags.ldspecs=-flto
-STM32VLD.menu.opt.o2std=Faster (-O2)
-STM32VLD.menu.opt.o2std.build.flags.optimize=-O2
-STM32VLD.menu.opt.o2std.build.flags.ldspecs=
-#STM32VLD.menu.opt.o2lto=Faster (-O2) with LTO
-#STM32VLD.menu.opt.o2lto.build.flags.optimize=-O2 -flto
-#STM32VLD.menu.opt.o2lto.build.flags.ldspecs=-flto
-STM32VLD.menu.opt.o3std=Fastest (-O3)
-STM32VLD.menu.opt.o3std.build.flags.optimize=-O3
-STM32VLD.menu.opt.o3std.build.flags.ldspecs=
-#STM32VLD.menu.opt.o3lto=Fastest (-O3) with LTO
-#STM32VLD.menu.opt.o3lto.build.flags.optimize=-O3 -flto
-#STM32VLD.menu.opt.o3lto.build.flags.ldspecs=-flto
-STM32VLD.menu.opt.ogstd=Debug (-g)
-STM32VLD.menu.opt.ogstd.build.flags.optimize=-Og
-STM32VLD.menu.opt.ogstd.build.flags.ldspecs=
+STM32F103TB.menu.opt.osstd=Smallest (default)
+#STM32F103TB.menu.opt.oslto=Smallest Code with LTO
+#STM32F103TB.menu.opt.oslto.build.flags.optimize=-Os -flto
+#STM32F103TB.menu.opt.oslto.build.flags.ldspecs=-flto
+STM32F103TB.menu.opt.o1std=Fast (-O1)
+STM32F103TB.menu.opt.o1std.build.flags.optimize=-O1
+STM32F103TB.menu.opt.o1std.build.flags.ldspecs=
+#STM32F103TB.menu.opt.o1lto=Fast (-O1) with LTO
+#STM32F103TB.menu.opt.o1lto.build.flags.optimize=-O1 -flto
+#STM32F103TB.menu.opt.o1lto.build.flags.ldspecs=-flto
+STM32F103TB.menu.opt.o2std=Faster (-O2)
+STM32F103TB.menu.opt.o2std.build.flags.optimize=-O2
+STM32F103TB.menu.opt.o2std.build.flags.ldspecs=
+#STM32F103TB.menu.opt.o2lto=Faster (-O2) with LTO
+#STM32F103TB.menu.opt.o2lto.build.flags.optimize=-O2 -flto
+#STM32F103TB.menu.opt.o2lto.build.flags.ldspecs=-flto
+STM32F103TB.menu.opt.o3std=Fastest (-O3)
+STM32F103TB.menu.opt.o3std.build.flags.optimize=-O3
+STM32F103TB.menu.opt.o3std.build.flags.ldspecs=
+#STM32F103TB.menu.opt.o3lto=Fastest (-O3) with LTO
+#STM32F103TB.menu.opt.o3lto.build.flags.optimize=-O3 -flto
+#STM32F103TB.menu.opt.o3lto.build.flags.ldspecs=-flto
+STM32F103TB.menu.opt.ogstd=Debug (-g)
+STM32F103TB.menu.opt.ogstd.build.flags.optimize=-Og
+STM32F103TB.menu.opt.ogstd.build.flags.ldspecs=
+
+########################### STM32F100RB to FLASH ###########################
+
+STM32F100RB.name=STM32F100RB to FLASH
+#STM32F100RB.vid.0=0x1EAF
+#STM32F100RB.pid.0=0x0004
+
+STM32F100RB.build.vect=VECT_TAB_ADDR=0x8000000
+STM32F100RB.build.core=maple
+STM32F100RB.build.board=STM32F100RB
+STM32F100RB.build.variant=STM32F100RB
+STM32F100RB.build.ldscript=ld/jtag.ld
+
+STM32F100RB.build.family=cortex-m3
+STM32F100RB.build.f_cpu=24000000L
+STM32F100RB.upload.use_1200bps_touch=false
+STM32F100RB.upload.file_type=bin
+STM32F100RB.upload.auto_reset=true
+STM32F100RB.upload.params.quiet=no
+
+STM32F100RB.build.cpu_flags=-DMCU_STM32F100RB
+
+#---------------------------- UPLOAD METHODS ---------------------------
+
+STM32F100RB.menu.upload_method.STLinkMethod=STLink
+STM32F100RB.menu.upload_method.STLinkMethod.upload.protocol=STLink
+STM32F100RB.menu.upload_method.STLinkMethod.upload.tool=stlink_upload
+STM32F100RB.menu.upload_method.STLinkMethod.build.upload_flags=-DCONFIG_MAPLE_MINI_NO_DISABLE_DEBUG
+
+#-- CPU Clock frequency
+STM32F100RB.menu.cpu_speed.speed_72mhz=72Mhz (Normal)
+STM32F100RB.menu.cpu_speed.speed_72mhz.build.f_cpu=72000000L
+
+STM32F100RB.menu.cpu_speed.speed_48mhz=48Mhz (Slow - with USB)
+STM32F100RB.menu.cpu_speed.speed_48mhz.build.f_cpu=48000000L
+
+STM32F100RB.menu.cpu_speed.speed_128mhz=Overclocked 128Mhz NO USB SERIAL. MANUAL RESET NEEDED TO UPLOAD
+STM32F100RB.menu.cpu_speed.speed_128mhz.build.f_cpu=128000000L
+
+#-- Optimizations
+STM32F100RB.menu.opt.osstd=Smallest (default)
+#STM32F100RB.menu.opt.oslto=Smallest Code with LTO
+#STM32F100RB.menu.opt.oslto.build.flags.optimize=-Os -flto
+#STM32F100RB.menu.opt.oslto.build.flags.ldspecs=-flto
+STM32F100RB.menu.opt.o1std=Fast (-O1)
+STM32F100RB.menu.opt.o1std.build.flags.optimize=-O1
+STM32F100RB.menu.opt.o1std.build.flags.ldspecs=
+#STM32F100RB.menu.opt.o1lto=Fast (-O1) with LTO
+#STM32F100RB.menu.opt.o1lto.build.flags.optimize=-O1 -flto
+#STM32F100RB.menu.opt.o1lto.build.flags.ldspecs=-flto
+STM32F100RB.menu.opt.o2std=Faster (-O2)
+STM32F100RB.menu.opt.o2std.build.flags.optimize=-O2
+STM32F100RB.menu.opt.o2std.build.flags.ldspecs=
+#STM32F100RB.menu.opt.o2lto=Faster (-O2) with LTO
+#STM32F100RB.menu.opt.o2lto.build.flags.optimize=-O2 -flto
+#STM32F100RB.menu.opt.o2lto.build.flags.ldspecs=-flto
+STM32F100RB.menu.opt.o3std=Fastest (-O3)
+STM32F100RB.menu.opt.o3std.build.flags.optimize=-O3
+STM32F100RB.menu.opt.o3std.build.flags.ldspecs=
+#STM32F100RB.menu.opt.o3lto=Fastest (-O3) with LTO
+#STM32F100RB.menu.opt.o3lto.build.flags.optimize=-O3 -flto
+#STM32F100RB.menu.opt.o3lto.build.flags.ldspecs=-flto
+STM32F100RB.menu.opt.ogstd=Debug (-g)
+STM32F100RB.menu.opt.ogstd.build.flags.optimize=-Og
+STM32F100RB.menu.opt.ogstd.build.flags.ldspecs=
 
 ################################################################################

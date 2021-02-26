@@ -36,7 +36,6 @@ VARIANT_REMAP = {
     "bluepill_f103c6": "generic_stm32f103c",
     "bluepill_f103cb": "generic_stm32f103c",
     "maple": "maple",
-    "microduino32_flash": "microduino",
     "genericSTM32F103C6": "generic_stm32f103c",
     "genericSTM32F103C8": "generic_stm32f103c",
     "genericSTM32F103CB": "generic_stm32f103c",
@@ -53,7 +52,7 @@ VARIANT_REMAP = {
     "genericSTM32F103ZC": "generic_stm32f103z",
     "genericSTM32F103ZD": "generic_stm32f103z",
     "genericSTM32F103ZE": "generic_stm32f103z",
-    "disco_f100rb": "STM32VLD"
+    "disco_f100rb": "STM32F100RB"
 }
 
 
@@ -109,7 +108,7 @@ def add_upload_protocol_defines(board, upload_protocol):
                 "SERIAL_USB"
             ])
 
-    is_generic = board.startswith("generic") or board == "hytiny_stm32f103t"
+    is_generic = board.startswith("generic") or board == "STM32F103TB"
     if upload_protocol in ("stlink", "dfu", "jlink") and is_generic:
         env.Append(CPPDEFINES=["GENERIC_BOOTLOADER"])
 
@@ -120,7 +119,7 @@ def get_linker_script(board, mcu, upload_protocol):
             "genericSTM32F103C",
             "genericSTM32F103T",
             "maple_mini_b20",
-            "hytiny_stm32f103t"
+            "STM32F103TB"
         )
 
         if any(b in board for b in boards_with_boot_20):
@@ -163,7 +162,7 @@ def get_linker_script(board, mcu, upload_protocol):
             "genericSTM32F103CB",
             "genericSTM32F103TB",
             "disco_f100rb",
-            "hytiny_stm32f103t"
+            "STM32F103TB"
         )
 
         if any(b in board for b in specific_scripts):
